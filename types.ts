@@ -6,8 +6,3 @@ export interface OrnamentData {
   position: [number, number, number];
   color: string;
 }
-
-export interface PhotoData {
-  url: string;
-  orientation: 'landscape' | 'portrait';
-}

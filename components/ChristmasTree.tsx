@@ -3,7 +3,6 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { InstancedMesh, Object3D, Vector3, Color, Euler, MathUtils, Group, Shape, ExtrudeGeometry } from 'three';
 import { useStore } from '../store';
 import { generateTreePositions, generateNebulaPositions, generateOrnamentPositions, generateSpiralPositions } from '../utils/geometry';
-import gsap from 'gsap';
 
 // Particle Breakdown 
 const COUNT_ORBS = 4000;

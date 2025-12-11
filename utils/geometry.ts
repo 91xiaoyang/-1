@@ -89,38 +89,3 @@ export const generateSpiralPositions = (count: number, radius: number, height: n
   }
   return positions;
 };
-
-// Generate a dense cluster for the Top Star (Legacy/Fallback)
-export const generateClusterPositions = (count: number, center: THREE.Vector3, radius: number) => {
-  const positions = new Float32Array(count * 3);
-  for(let i=0; i<count; i++) {
-      const r = Math.pow(Math.random(), 2) * radius; 
-      const u = Math.random();
-      const v = Math.random();
-      const theta = 2 * Math.PI * u;
-      const phi = Math.acos(2 * v - 1);
-      const x = center.x + r * Math.sin(phi) * Math.cos(theta);
-      const y = center.y + r * Math.sin(phi) * Math.sin(theta);
-      const z = center.z + r * Math.cos(phi);
-      positions[i*3] = x;
-      positions[i*3+1] = y;
-      positions[i*3+2] = z;
-  }
-  return positions;
-}
-
-// Generate positions for the Photo Ring (Gallery)
-export const generatePhotoRingPositions = (count: number, radius: number) => {
-  const positions: THREE.Vector3[] = [];
-  for (let i = 0; i < count; i++) {
-    const angle = (i / count) * Math.PI * 2;
-    // Calculate position on a ring
-    const x = Math.cos(angle) * radius;
-    const z = Math.sin(angle) * radius;
-    // Slight up/down variation to make it look organic
-    const y = Math.sin(angle * 3) * 2; 
-    
-    positions.push(new THREE.Vector3(x, y, z));
-  }
-  return positions;
-};
