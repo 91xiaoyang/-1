@@ -1,0 +1,7 @@
+{
+  "name": "Merry Christmas WebGL",
+  "description": "A 3D Interactive Christmas Tree experience with hand gesture control and particle effects.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
